@@ -25,8 +25,8 @@ public class AddonTest extends Addon{
 	
 	@Override
 	public void onEnable(){
-		AddonManagerPlugin.getInstance().registerCommand(this, new CommandTest("test", this));
-		System.out.println("It enabled!");
+		this.getPlugin().registerCommand(this, new CommandTest("test", this));
+		this.getLogger().info("It enabled!");
 	}
 
 }

@@ -2,7 +2,6 @@ package me.superckl.addontest;
 
 import org.bukkit.command.CommandSender;
 import org.sensationcraft.addonmanager.Addon;
-import org.sensationcraft.addonmanager.AddonManagerPlugin;
 import org.sensationcraft.addonmanager.commands.AddonCommand;
 
 public class CommandTest extends AddonCommand{
@@ -21,8 +20,8 @@ public class CommandTest extends AddonCommand{
 
 	@Override
 	public boolean execute(CommandSender arg0, String arg1, String[] arg2) {
-		System.out.println("It worked!");
-		AddonManagerPlugin.getInstance().unregisterCommand(this.addon, this);
+		this.addon.getLogger().info("It worked!");
+		this.addon.getPlugin().unregisterCommand(this.addon, this);
 		return true;
 	}
 
